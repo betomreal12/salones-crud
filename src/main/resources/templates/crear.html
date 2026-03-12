@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Crear salón</title>
+</head>
+
+<body>
+
+<h1>Nuevo Salón</h1>
+
+<form th:action="@{/salones/guardar}" th:object="${salon}" method="post">
+
+    ID: <input type="text" th:field="*{id}"><br>
+    Nombre: <input type="text" th:field="*{nombre}"><br>
+    Capacidad: <input type="text" th:field="*{capacidad}"><br>
+    Edificio: <input type="text" th:field="*{edificio}"><br>
+
+    <button type="submit">Guardar</button>
+
+</form>
+
+</body>
+</html>

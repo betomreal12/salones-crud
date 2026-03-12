@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Editar salón</title>
+</head>
+
+<body>
+
+<h1>Editar Salón</h1>
+
+<form th:action="@{/salones/actualizar}" th:object="${salon}" method="post">
+
+    ID: <input type="text" th:field="*{id}" readonly><br>
+    Nombre: <input type="text" th:field="*{nombre}"><br>
+    Capacidad: <input type="text" th:field="*{capacidad}"><br>
+    Edificio: <input type="text" th:field="*{edificio}"><br>
+
+    <button type="submit">Actualizar</button>
+
+</form>
+
+</body>
+</html>

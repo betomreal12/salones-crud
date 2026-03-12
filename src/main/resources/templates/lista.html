@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Lista de Salones</title>
+</head>
+
+<body>
+
+<h1>Lista de Salones</h1>
+
+<a href="/salones/nuevo">Agregar salón</a>
+
+<table border="1">
+
+    <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Capacidad</th>
+        <th>Edificio</th>
+        <th>Acciones</th>
+    </tr>
+
+    <tr th:each="salon : ${salones}">
+        <td th:text="${salon.id}"></td>
+        <td th:text="${salon.nombre}"></td>
+        <td th:text="${salon.capacidad}"></td>
+        <td th:text="${salon.edificio}"></td>
+
+        <td>
+            <a th:href="@{/salones/editar/{id}(id=${salon.id})}">Editar</a>
+            <a th:href="@{/salones/eliminar/{id}(id=${salon.id})}">Eliminar</a>
+        </td>
+
+    </tr>
+
+</table>
+
+</body>
+</html>
